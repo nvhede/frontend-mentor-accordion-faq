@@ -1,0 +1,244 @@
+<!--DOCTYPE-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+  <style>
+    @font-face {
+      font-family: WorkSans;
+      src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf')
+    }
+
+    @font-face {
+      font-family: WorkSansItalic;
+      src: url('./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf')
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    img ,picture, svg, canvas, video {
+      display: block;
+      max-width: 100%;
+    }
+
+    input, button, textarea, select {
+      font: inherit;
+    }
+
+    p h1 h2 h3 h4 h5 h6 {
+      overflow-wrap: break-word;
+    }
+
+    html {
+      --DarkPurple: #301534;
+      --Pink: #AD28EB;
+      --LightPink: #F8EEFF;
+      --PalePurple: #8B6990;
+      --White: #FFFFFF;
+      --WhiteCoffee: #E3DDD7;
+
+      font-family: 'WorkSans', 'Times New Roman', Times, serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: .05rem;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: auto;
+      justify-content: center;
+      align-items: center;
+
+      line-height: 1.5;
+       -webkit-font-smoothing: antialiased;
+
+      background: var(--LightPink) url('./assets/images/background-pattern-desktop.svg') top no-repeat;
+      -webkit-background-size: 100vw;
+      -moz-background-size: 100vw;
+      -o-background-size: 100vw;
+      background-size: 100vw;
+    }
+
+    main {
+      max-width: 600px;
+      padding: 25px;
+      border-radius: 14px;
+      background-color: var(--White);
+      height: auto;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    hr {
+      border-bottom: 1px solid var(--LightPink);
+      width: 100%;
+    }
+
+    section {
+
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      grid-row: 25px;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--PalePurple);
+      font-size: .75rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .icon-star {
+      margin-right: 10px;
+    }
+
+
+    .question {
+      padding: 5px;
+      cursor: pointer;
+    }
+    
+    .question:hover {
+      color: var(--Pink);
+      transition: color 500ms ease;
+    }
+
+    .answer + [aria-pressed=false] {
+      visibility:hidden;
+    }
+
+    .answer + [aria-pressed=true] {
+      visibility:visible;
+    }
+   
+  </style>
+
+  <script type="text/javascript">
+    const button = document.querySelector('.button-toggle');
+
+    function toggleOpen() {
+      // 1.) Change the attribute to its opposite
+      const currentState = button.getAttribute('aria-pressed');
+      button.setAttribute('aria-pressed', !currentState );
+
+      // 2.) Grab the icon and the closes "question" class next to this button.
+      // 2a.) Change the icon class to its opposite
+
+    }
+
+    button.addEventListener('click', toggleOpen);
+  
+  </script> 
+</head>
+<body>
+
+  <main>
+    <section>
+      <div class="header">
+       <div class="icon-star">
+         <img src="./assets/images/icon-star.svg" aria-label="start icon highlighting the start of commonly asked questions"/>
+      </div>
+        <h1> FAQs </h1>
+      </div>
+
+      <article>
+        <div class="question">
+          <h3> What is Frontend Mentor, and how will it help me?</h3>
+          <div class="toggle">
+            <button aria-pressed="false" id="button-1" class="button-toggle">
+              <img src="./assets/images/icon-minus.svg" class=""/>
+              
+            </button> 
+          </div>
+        </div>
+        <p classname="answer">Frontend Mentor offers realistic coding challenges to help developers improve their 
+          frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+          all levels and ideal for portfolio building.</p>
+      </article>
+
+      <hr/>
+
+      <article>
+        <div class="question">
+          <h3>Is Frontend Mentor free?</h3>
+          <div class="toggle">
+            <button aria-pressed="false" id="button-2" class="button-toggle">
+              <img src="./assets/images/icon-minus.svg" class="active"/>
+              
+            </button>
+          </div>
+        </div>
+        <p classname="answer"> Yes it is! We support many challenges for anyone of any kind of experience or background to challenge.
+          In addition to free challenges, we support premium challenges for a paid tier.
+        </p>
+      </article>
+
+      <hr/>
+
+      <article>
+        <div class="question">
+          <h3>Can I use Frontend Mentor projects in my portfolio?</h3>
+          <div class="toggle">
+            <button aria-pressed="false" id="button-2" class="button-toggle">
+              <img src="./assets/images/icon-minus.svg" class="active"/>
+              
+            </button>
+          </div>
+        </div>
+        <p classname="answer"> Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+          way to showcase your skills to potential employers!</p>
+      </article>
+
+      <hr/>
+
+      <article>
+        <div class="question">
+          <h3>How can I get help if I'm stuck on a Frontend Mentor challenge?</h3>
+          <div class="toggle">
+            <button aria-pressed="false" id="button-3" class="button-toggle">
+              <img src="./assets/images/icon-minus.svg" class=""/>
+              
+            </button>
+          </div>
+        </div>
+        <p classname="answer">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+          channel where you can ask questions and seek support from other community members.</p>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
